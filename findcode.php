@@ -31,11 +31,9 @@ function start_draw(&$input, &$output, $x, $y, $rule = 1)
 {
     global $rules;
     /* default rule 1 */
-    $xdir = 0;
-    $ydir = -1;
+    list($xdir, $ydir) = array(0, -1);
     if ($rule == $rules[2]) {
-        $xdir = -1;
-        $ydir = 0;
+        list($xdir, $ydir) = array(-1, 0);
     }
 
     $stop = false;
@@ -53,21 +51,14 @@ function start_draw(&$input, &$output, $x, $y, $rule = 1)
                 $stop = true;
                 break;
             case $rules[4]:
-                $newxdir = -$ydir;
-                $newydir = $xdir;
-                $xdir = $newxdir;
-                $ydir = $newydir;
+                list($xdir, $ydir) = array(-$ydir, $xdir);
                 break;
             case $rules[5]:
-                $newxdir = $ydir;
-                $newydir = -$xdir;
-                $xdir = $newxdir;
-                $ydir = $newydir;
+                list($xdir, $ydir) = array($ydir, -$xdir);
                 break;
         }
 
-        $x += $xdir;
-        $y += $ydir;
+        list($x, $y) = array($x + $xdir, $y + $ydir);
     }
 }
 
