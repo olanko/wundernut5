@@ -3,9 +3,6 @@
 $input = imagecreatefrompng("wunderdog.png");
 $output = imagecreatefrompng("wunderdog.png");
 
-$string = "test";
-$orange = imagecolorallocate($output, 220, 210, 60);
-
 $width = imagesx($input);
 $heigth = imagesy($input);
 
