@@ -9,7 +9,8 @@ $orange = imagecolorallocate($output, 220, 210, 60);
 $width = imagesx($input);
 $heigth = imagesy($input);
 
-function color_value($r, $g, $b) {
+function color_value($r, $g, $b)
+{
     return ($r << 16) + ($g << 8) + $b;
 }
 
@@ -29,7 +30,8 @@ $rules = array(1 => color_value(7, 84, 19),
                5 => color_value(123, 131, 154)
 );
 
-function start_draw(&$input, &$output, $x, $y, $rule = 1) {
+function start_draw(&$input, &$output, $x, $y, $rule = 1)
+{
     global $rules;
     /* default rule 1 */
     $xdir = 0;
